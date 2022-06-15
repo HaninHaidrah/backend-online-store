@@ -7,6 +7,7 @@ const favItem = (sequelize, DataTypes) =>
     price: { type: DataTypes.STRING, allowNull: false },
     quantity: { type: DataTypes.STRING, allowNull: false },
     Discription: { type: DataTypes.STRING },
+    username: { type: DataTypes.STRING, allowNull: false },
   });
 
 module.exports = favItem;

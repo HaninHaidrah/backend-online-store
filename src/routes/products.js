@@ -58,6 +58,12 @@ async function handleGetAddedProducts(req, res) {
   }
 }
 
+async function handleGetFavList(req, res) {
+  const username = req.params.username;
+  const allRecords = await fav.getUserData(username);
+  res.status(200).json(allRecords);
+}
+
 async function handleUpdateAddedProducts(req, res) {
   const id = req.params.id;
   const obj = req.body;
@@ -100,9 +106,4 @@ async function handleCreateFavList(req, res) {
   res.status(201).json(newData);
 }
 
-async function handleGetFavList(req, res) {
-  console.log(req.user);
-  const allRecords = await fav.get();
-  res.status(200).json(allRecords);
-}
 module.exports = router;
