@@ -50,6 +50,8 @@ async function handleGetAddedProducts(req, res) {
     if (username === req.user.dataValues.username) {
       const allRecords = await addedProducts.get();
       res.status(200).json(allRecords);
+    } else {
+      res.send([]);
     }
   } catch (error) {
     console.log(error);
