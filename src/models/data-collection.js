@@ -16,7 +16,9 @@ class DataCollection {
   getDesc(desc) {
     return this.model.findOne({ where: { Discription: desc } });
   }
-
+  getUserData(username) {
+    return this.model.findOne({ where: { userName: username } });
+  }
   create(record) {
     return this.model.create(record);
   }

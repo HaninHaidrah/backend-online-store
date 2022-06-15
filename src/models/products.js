@@ -7,6 +7,7 @@ const products = (sequelize, DataTypes) =>
     price: { type: DataTypes.STRING, allowNull: false },
     quantity: { type: DataTypes.STRING, allowNull: false },
     Discription: { type: DataTypes.STRING },
+    userName: { type: DataTypes.STRING },
   });
 
 module.exports = products;
