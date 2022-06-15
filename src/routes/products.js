@@ -59,11 +59,11 @@ async function handleGetAddedProducts(req, res) {
 async function handleUpdateAddedProducts(req, res) {
   const id = req.params.id;
   const obj = req.body;
-  let theRecord = await addedProducts.get(id);
-  const desc = theRecord.Discription;
-  let theRecord2 = await products.getDesc(desc);
+  // let theRecord = await addedProducts.get(id);
+  // const desc = theRecord.Discription;
+  // let theRecord2 = await products.getDesc(desc);
   const record = await addedProducts.update(id, obj);
-  const record2 = await products.update(theRecord2.id, obj);
+  // const record2 = await products.update(theRecord2.id, obj);
   res.status(201).json(record);
 }
 async function handleDeleteAddedProducts(req, res) {
@@ -73,11 +73,7 @@ async function handleDeleteAddedProducts(req, res) {
   let theRecord2 = await products.getDesc(desc);
   let deletedRecord = await addedProducts.delete(id);
   let deletedRecord2 = await products.delete(theRecord2.id);
-  res
-    .status(200)
-    .json(
-      ` the product's id: ${id} deleted successfully`
-    );
+  res.status(200).json(` the product's id: ${id} deleted successfully`);
 }
 async function handleGetProducts(req, res) {
   const allRecords = await products.get();
